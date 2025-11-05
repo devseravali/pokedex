@@ -75,3 +75,32 @@ export interface FavoritePokemonType {
 }
 
 export type ThemeType = 'light' | 'dark';
+
+interface Theme {
+  types: Record<string, string>;
+  colors: {
+    cardBackground: string;
+  };
+}
+
+const getTypeColor = (type: string | string[], theme: Theme): string => {
+  if (Array.isArray(type)) {
+    return theme.types[type[0] as keyof typeof theme.types] || theme.colors.cardBackground;
+  }
+  return theme.types[type as keyof typeof theme.types] || theme.colors.cardBackground;
+};
+
+const theme = {
+  types: {
+    fire: '#F08030',
+    water: '#6890F0',
+    grass: '#78C850',
+    electric: '#F8D030',
+  },
+  colors: {
+    cardBackground: '#FFFFFF',
+  },
+};
+
+const type = '';
+console.log(getTypeColor(type, theme));

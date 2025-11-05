@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { StatItem, StrongStat } from "./PokemonStats.style";
+export const PokemonStats = ({ pokemon }) => {
+    return (_jsxs(_Fragment, { children: [_jsxs(StatItem, { children: [_jsx(StrongStat, { children: "HP:" }), " ", pokemon.stats.hp ?? "Não encontrado"] }), _jsxs(StatItem, { children: [_jsx(StrongStat, { children: "Ataque:" }), " ", pokemon.stats.attack ?? "Não encontrado"] }), _jsxs(StatItem, { children: [_jsx(StrongStat, { children: "Defesa:" }), " ", pokemon.stats.defense ?? "Não encontrado"] }), _jsxs(StatItem, { children: [_jsx(StrongStat, { children: "Velocidade:" }), " ", pokemon.stats.speed ?? "Não encontrado"] }), _jsxs(StatItem, { children: [_jsx(StrongStat, { children: "Especial Ataque:" }), " ", pokemon.stats["special-attack"] ?? "Não encontrado"] }), _jsxs(StatItem, { children: [_jsx(StrongStat, { children: "Especial Defesa:" }), " ", pokemon.stats["special-defense"] ?? "Não encontrado"] })] }));
+};

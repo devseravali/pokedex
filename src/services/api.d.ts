@@ -1,0 +1,12 @@
+import type { PokemonFull, PokemonSummary, FavoritePokemonType } from "../types/pokemon";
+export declare function fetchData<T>(url: string): Promise<T>;
+export declare function getPokemon(name: string): Promise<PokemonFull>;
+export declare const getPokemonWithCache: (name: string) => Promise<PokemonFull>;
+export declare function getAllPokemonsWithCache(limit?: number, offset?: number): Promise<PokemonSummary[]>;
+export declare const fetchTypesWithCache: () => Promise<any>;
+export declare const getFavoritePokemons: () => FavoritePokemonType[];
+export declare const FavoritePokemon: () => FavoritePokemonType[];
+export declare function buscarPokemon(nome: string, setLoading: (loading: boolean) => void, setPokemons: (pokemons: PokemonFull[]) => void, setError: (error: string) => void): Promise<void>;
+export declare function buscarPokemonPorNome(nome: string): Promise<any>;
+export declare function buscarPokemonsPorTipo(tipo: string): Promise<any>;
+export declare function mergeUniquePokemons(prev: PokemonFull[], next: PokemonFull[]): PokemonFull[];

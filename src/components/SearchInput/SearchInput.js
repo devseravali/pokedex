@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { SearchInputField, SearchInputContainer, Label, HiddenText, SearchInputFieldError, } from "./SearchInput.style";
+export const SearchInput = ({ value, onChange, placeholder, disabled, hasError = false, isSuccess = false, }) => {
+    return (_jsxs(SearchInputContainer, { children: [_jsx(Label, { htmlFor: "search-pokemon", children: "Buscar Pok\u00E9mon" }), hasError || isSuccess ? (_jsx(SearchInputFieldError, { "aria-label": "Buscar Pok\u00E9mon", id: "search-pokemon-error", value: value, onChange: (e) => onChange(e.target.value), placeholder: placeholder, disabled: disabled, "$error": hasError, "$success": isSuccess })) : (_jsx(SearchInputField, { "aria-label": "Buscar Pok\u00E9mon", autoFocus: true, id: "search-pokemon", value: value, onChange: (e) => onChange(e.target.value), placeholder: placeholder, disabled: disabled })), _jsx(HiddenText, { "$invisible": !hasError, children: "Por favor, insira um Pok\u00E9mon v\u00E1lido." }), _jsx(HiddenText, { "$invisible": !isSuccess, children: "Pok\u00E9mon encontrado com sucesso!" })] }));
+};

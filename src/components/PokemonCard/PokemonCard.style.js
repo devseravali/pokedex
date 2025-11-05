@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { MdStar, MdStarBorder } from "react-icons/md";
 import { MediaQueries } from "../../styles/MediaQueries";
-
-export const BackCard = styled.div`
+export const BackCard = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,8 +37,7 @@ export const BackCard = styled.div`
         width: 100%;
     }
 `;
-
-export const CardFront = styled.div`
+export const CardFront = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,8 +77,7 @@ export const CardFront = styled.div`
     }
 
 `;
-
-export const PokemonCard = styled.div<{ type?: string }>`
+export const PokemonCard = styled.div `
     width: 19rem;
     min-height: 22rem;
     margin: 1rem auto;
@@ -94,10 +91,12 @@ export const PokemonCard = styled.div<{ type?: string }>`
 
     &:hover {
         background-color: ${({ theme, type }) => {
-          if (!type) return theme.colors.cardBackground;
-          if (Array.isArray(type)) return theme.types[type[0] as keyof typeof theme.types] || theme.colors.cardBackground;
-          return theme.types[type as keyof typeof theme.types] || theme.colors.cardBackground;
-        }};
+    if (!type)
+        return theme.colors.cardBackground;
+    if (Array.isArray(type))
+        return theme.types[type[0]] || theme.colors.cardBackground;
+    return theme.types[type] || theme.colors.cardBackground;
+}};
         transform: scale(1.05);
     }
 
@@ -129,8 +128,7 @@ export const PokemonCard = styled.div<{ type?: string }>`
        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 `;
-
-export const PokemonDetail = styled.section`
+export const PokemonDetail = styled.section `
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,8 +159,7 @@ export const PokemonDetail = styled.section`
      box-shadow: none;
     }
 `;
-
-export const ImageStyles = styled.img`
+export const ImageStyles = styled.img `
     max-width: 100%;
     max-height: 100%;
     justify-content: center;
@@ -189,8 +186,7 @@ export const ImageStyles = styled.img`
       margin: 8px 8px 0px 8px;
     }
 `;
-
-export const H3 = styled.h3`
+export const H3 = styled.h3 `
     text-transform: uppercase;
     text-align: center;
     font-size: 1.5rem;
@@ -211,8 +207,7 @@ export const H3 = styled.h3`
     text-align: center;
     }
 `;
-
-export const P = styled.p`
+export const P = styled.p `
     text-align: center;
     color: ${({ theme }) => theme.colors.text};
     font-size: 1rem;
@@ -233,9 +228,8 @@ export const P = styled.p`
     font-size: 1rem;
     padding: 2rem;
     }
-`; 
-
-export const StrongTypes = styled.strong`
+`;
+export const StrongTypes = styled.strong `
     font-weight: 800;
     color: ${({ theme }) => theme.colors.text};
     font-size: 1rem;
@@ -258,8 +252,7 @@ export const StrongTypes = styled.strong`
     margin-top: 1rem;
     }
 `;
-
-export const ButtonFavorite = styled.button`    
+export const ButtonFavorite = styled.button `    
     background: none;
     border: none;
     cursor: pointer;
@@ -284,9 +277,8 @@ export const ButtonFavorite = styled.button`
     padding-bottom: 3rem;
     align-self: center;
     }
-`;  
-
-export const StarFilled = styled(MdStar)`
+`;
+export const StarFilled = styled(MdStar) `
     color: gold;
     width: 2.5rem;
     height: 2.5rem;
@@ -311,8 +303,7 @@ export const StarFilled = styled(MdStar)`
      height: 2.5rem;
     }
 `;
-
-export const StarEmpty = styled(MdStarBorder)`
+export const StarEmpty = styled(MdStarBorder) `
     color: lightgray;
     width: 2.5rem;
     height: 2.5rem;
@@ -337,8 +328,7 @@ ${MediaQueries.desktop} {
      height: 2.5rem;
 }
 `;
-
-export const ButtonDetailed = styled.button`
+export const ButtonDetailed = styled.button `
     font-size: 0.7rem;
     font-weight: 600;
         margin: 1rem auto 0.5rem auto;
@@ -381,8 +371,7 @@ export const ButtonDetailed = styled.button`
         display: block;
     }
 `;
-
-export const StrongMoves = styled.strong`
+export const StrongMoves = styled.strong `
     font-weight: 800;
     color: ${({ theme }) => theme.colors.text};
     font-size: 1rem;
@@ -408,8 +397,7 @@ export const StrongMoves = styled.strong`
     margin-top: 1rem;
     }
     `;
-
-export const MovesParagraph = styled.p`
+export const MovesParagraph = styled.p `
     margin-top: 1rem;
     font-size: 0.9rem;
     color: ${({ theme }) => theme.colors.text};
@@ -434,8 +422,7 @@ export const MovesParagraph = styled.p`
     margin-top: 1rem;
     }
 `;
-
-export const StrongHabilities = styled.strong`
+export const StrongHabilities = styled.strong `
     font-weight: 800;
     color: ${({ theme }) => theme.colors.text};
     font-size: 1rem;
@@ -458,8 +445,7 @@ export const StrongHabilities = styled.strong`
     margin-top: 1rem;
     }
 `;
-
-export const HabilitiesParagraph = styled.p`
+export const HabilitiesParagraph = styled.p `
     margin-top: 1rem;   
     font-size: 0.9rem;
     color: ${({ theme }) => theme.colors.text};
@@ -481,8 +467,7 @@ export const HabilitiesParagraph = styled.p`
     padding-bottom: 1rem;
     }
 `;
-
-export const H4 = styled.h4`
+export const H4 = styled.h4 `
     font-size: 1.2rem;
     color: ${({ theme }) => theme.colors.title};
     margin: 0.5rem 0;
@@ -506,8 +491,7 @@ export const H4 = styled.h4`
     margin: 0.5rem 0; 
     padding-top: 0.5rem;
 }`;
-
-export const StatsList = styled.ul`
+export const StatsList = styled.ul `
     display: flex;    
     flex-wrap: wrap;       
     gap: 8px;
@@ -536,8 +520,7 @@ export const StatsList = styled.ul`
     padding: 0.9rem;
     }
 `;
-
-export const StatItem = styled.li`
+export const StatItem = styled.li `
     font-size: 0.8rem;
     font-weight: 500;
     color: ${({ theme }) => theme.colors.text};
@@ -560,8 +543,7 @@ export const StatItem = styled.li`
     padding-left: 0.8rem;
     }
 `;
-
-export const StrongStat = styled.strong`
+export const StrongStat = styled.strong `
     font-weight: 800;
     color: ${({ theme }) => theme.colors.text};
 
@@ -577,8 +559,7 @@ export const StrongStat = styled.strong`
     font-size: 1rem;
     }
 `;
-
-export const NaoEncontrado = styled.p`
+export const NaoEncontrado = styled.p `
     font-size: 1rem;
     color: ${({ theme }) => theme.colors.text};     
     text-align: center; 

@@ -67,4 +67,3 @@ export const darkTheme: DefaultTheme = {
 };
 
 export const themes = { light: lightTheme, dark: darkTheme };
-export default themes;

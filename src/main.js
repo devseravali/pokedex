@@ -1,6 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import React from 'react';
-createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(BrowserRouter, { children: _jsx(App, {}) }) }));
+import { BrowserRouter } from 'react-router-dom';
+ReactDOM.createRoot(document.getElementById('root')).render(_jsx(BrowserRouter, { basename: "/pokedex", children: _jsx(App, {}) }));

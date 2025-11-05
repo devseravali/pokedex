@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { FavoritePage } from '../pages/Favorites/FavoritePage'; 
 import type { PokemonFull } from '../types/pokemon';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { themes } from '../styles/Themes';
+import { themes } from '../styles/themes';
 
 const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({

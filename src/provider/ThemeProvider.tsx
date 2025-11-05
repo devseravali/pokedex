@@ -1,7 +1,7 @@
 import { type ReactNode, useState } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { ThemeContext } from "../context/ThemeContext";
-import { themes } from "../styles/Themes";
+import { themes } from "../styles/themes";
 
 type ThemeProviderProps = {
   children: ReactNode;

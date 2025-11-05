@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import OrbitronRegular from "../../src/assets/fonts/Orbitron-Regular.ttf";
+import OrbitronRegular from "../assets/fonts/Orbitron-Regular.ttf";
 
 export const GlobalStyle = createGlobalStyle`
     * {

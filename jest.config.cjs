@@ -3,11 +3,14 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest', 
   },
-   moduleNameMapper: {
-     '\\.(css|less|scss|sass)$': 'identity-obj-proxy', 
-     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js',
-     '\\.ttf$': '<rootDir>/__mocks__/fileMock.js',
-   },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(ttf|woff|woff2|eot|otf|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|less|scss)$': 'identity-obj-proxy',
+
+      '\\.(ttf|woff|woff2|eot|otf|svg)$': '<rootDir>/__mocks__/fileMock.js',
+      '\\.(css|less|scss)$': 'identity-obj-proxy
+  },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'], 
   testPathIgnorePatterns: ['/node_modules/', '/dist/'], 
 };

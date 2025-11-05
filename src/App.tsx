@@ -18,6 +18,7 @@ function App() {
       <ThemeProvider>
         <GlobalStyle />
         <Header />
+
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route
@@ -33,6 +34,7 @@ function App() {
                 </motion.div>
               }
             />
+
             <Route
               path="/favorites"
               element={
@@ -46,6 +48,7 @@ function App() {
                 </motion.div>
               }
             />
+
             <Route
               path="/pokemon/:name"
               element={
@@ -61,6 +64,7 @@ function App() {
             />
           </Routes>
         </AnimatePresence>
+
         <Footer />
       </ThemeProvider>
     </>

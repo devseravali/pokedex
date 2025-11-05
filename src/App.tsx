@@ -3,7 +3,7 @@ import ThemeProvider from './provider/ThemeProvider';
 import { Home } from './pages/Home/Home';
 import { FavoritePage } from './pages/Favorites/FavoritePage';
 import { Header } from './components/Header/Header';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { PokemonDetail } from './pages/PokemonDetail/PokemonDetail';
 import { Footer } from './components/Footer/Footer';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -12,7 +12,7 @@ import { ScrollToTop } from './utils/ScrollToTop';
 const App = () => {
   const location = useLocation();
   return (
-    <BrowserRouter basename="/pokedex">
+    <>
       <ScrollToTop />
       <ThemeProvider>
         <GlobalStyle />
@@ -62,7 +62,7 @@ const App = () => {
         </AnimatePresence>
         <Footer />
       </ThemeProvider>
-    </BrowserRouter>
+    </>
   );
 };
 export default App;

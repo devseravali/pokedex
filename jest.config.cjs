@@ -5,7 +5,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '\.(ttf|woff|woff2|eot|otf|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(ttf|woff|woff2|eot|otf|svg)$': '<rootDir>/__mocks__/fileMock.js',
     '\.(css|less|scss)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'], 

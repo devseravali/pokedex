@@ -21,8 +21,8 @@ jobs:
         run: npm test
       - name: Gerar cobertura
         run: npm test -- --coverage
-      - name: Upload de cobertura
-        uses: actions/upload-artifact@v3
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage/

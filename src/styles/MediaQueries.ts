@@ -7,5 +7,4 @@ export const MediaQueries = {
 
     large: '@media (min-width: 1920px)',
   };
-  
-      
+

@@ -3,7 +3,7 @@ import { MediaQueries } from "../../styles/MediaQueries";
 export const ThemeTogglerContainer = styled.div `
   display: flex;
   align-items: center;
-  justify-content: center;
+    justify-content: center;
   width: auto;
   background: transparent;
   padding: 0;
@@ -16,17 +16,17 @@ export const ThemeTogglerContainer = styled.div `
     padding: 0;
   }
 
-  ${MediaQueries.tablet} {
-     flex-direction: row;
-     align-items: center;
-     justify-content: flex-end;
-  }
+    ${MediaQueries.tablet} {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
 
-  ${MediaQueries.desktop} {
-     flex-direction: row;
-     align-items: center;
-     justify-content: flex-end;
-  }
+    ${MediaQueries.desktop} {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
 `;
 export const ButtonThemeToggler = styled.button `
   background: none;
@@ -50,13 +50,13 @@ export const ButtonThemeToggler = styled.button `
   }
 
   ${MediaQueries.tablet} {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 }
 
   ${MediaQueries.desktop} {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
   }
 `;
 export const Img = styled.img `
@@ -65,7 +65,7 @@ export const Img = styled.img `
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 100%;
   display: block;
-  margin-right: 10rem;
+  margin: 0;
 
   ${MediaQueries.mobile} {
     width: 50px;
@@ -74,8 +74,8 @@ export const Img = styled.img `
   }
 
   ${MediaQueries.tablet} {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     margin: 0;
   }
 

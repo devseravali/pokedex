@@ -6,15 +6,15 @@ export const Header = () => {
     return (
         <>
             <HeaderContainer role="banner" aria-label="Cabeçalho principal">
-                 <H1>Pokédex</H1>
+                <H1>Pokédex</H1>
                 <Nav role="navigation" aria-label="Navegação principal">
                     <Ul>
-                    <HomeLi><HomeLink as={Link} to="/" aria-current="page">Home</HomeLink></HomeLi>
-                    <HomeLi><HomeLink as={Link} to="/favorites" aria-current="page">Favoritos</HomeLink></HomeLi>
-                        <TogglerWrapper>
-                            <ThemeToggler />
-                        </TogglerWrapper>
+                        <HomeLi><HomeLink as={Link} to="/" aria-current="page">Home</HomeLink></HomeLi>
+                        <HomeLi><HomeLink as={Link} to="/favorites" aria-current="page">Favoritos</HomeLink></HomeLi>
                     </Ul>
+                    <TogglerWrapper>
+                        <ThemeToggler />
+                    </TogglerWrapper>
                 </Nav>
             </HeaderContainer>
         </>

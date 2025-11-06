@@ -1,28 +1,30 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { FavoritePage } from '../pages/Favorites/FavoritePage'; 
+import { FavoritePage } from '../pages/Favorites/FavoritePage';
 import type { PokemonFull } from '../types/pokemon';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { themes } from '../styles/themes';
 
 const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-  Link: ({ children, to }: { children: React.ReactNode; to: string }) => <a href={to}>{children}</a>,
-}));
-
-
 const mockToggleFavorite = jest.fn();
 const mockIsFavorite = jest.fn(() => true);
-let favoritePokemonsMock: PokemonFull[] = []; 
+
+jest.mock('react-router-dom', () => {
+  const originalModule = jest.requireActual('react-router-dom');
+  return {
+    ...originalModule,
+    useNavigate: () => mockNavigate,
+    Link: (props: { children: React.ReactNode; to: string }) => {
+      return React.createElement('a', { href: props.to }, props.children);
+    },
+  };
+});
+
+import { useFavorites } from '../hooks/useFavorites';
 
 jest.mock('../hooks/useFavorites', () => ({
-  useFavorites: () => ({
-    favoritePokemons: favoritePokemonsMock,
-    toggleFavorite: mockToggleFavorite,
-    isFavorite: mockIsFavorite,
-  }),
+  useFavorites: jest.fn(),
 }));
 
 const renderWithRouter = (ui: React.ReactNode) =>
@@ -37,8 +39,14 @@ describe('FavoritePage', () => {
     jest.clearAllMocks();
   });
 
-  it('mostra mensagem quando não há favoritos', () => {
-    favoritePokemonsMock = [];
+  it('exibe mensagem quando não há pokémons favoritos', () => {
+    const favoritePokemonsMock: PokemonFull[] = [];
+    (useFavorites as jest.Mock).mockReturnValue({
+      favoritePokemons: favoritePokemonsMock,
+      toggleFavorite: mockToggleFavorite,
+      isFavorite: mockIsFavorite,
+    });
+
     renderWithRouter(<FavoritePage />);
 
     expect(screen.getByText(/nenhum favorito encontrado/i)).toBeInTheDocument();
@@ -48,7 +56,7 @@ describe('FavoritePage', () => {
   });
 
   it('renderiza a lista de pokémons favoritos', () => {
-    favoritePokemonsMock = [
+    const favoritePokemonsMock: PokemonFull[] = [
       {
         id: '25',
         name: 'Pikachu',
@@ -66,6 +74,12 @@ describe('FavoritePage', () => {
         },
       },
     ];
+
+    (useFavorites as jest.Mock).mockReturnValue({
+      favoritePokemons: favoritePokemonsMock,
+      toggleFavorite: mockToggleFavorite,
+      isFavorite: mockIsFavorite,
+    });
 
     renderWithRouter(<FavoritePage />);
 

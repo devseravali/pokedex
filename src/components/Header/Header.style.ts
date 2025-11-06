@@ -22,12 +22,11 @@ export const HeaderContainer = styled.header`
 
   ${MediaQueries.tablet} {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    padding: 3rem 5rem;
     width: 100%;
-    max-width: 768px;
+    padding: 1.5rem 2rem;
+    max-width: none;
   }
 
   ${MediaQueries.desktop} {
@@ -79,11 +78,11 @@ export const Nav = styled.nav`
 
   ${MediaQueries.tablet} {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 5rem;
     width: 100%;
+    padding: 1.5rem 2rem;
+    max-width: none;
   }
 
   ${MediaQueries.desktop} {

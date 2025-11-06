@@ -1783,20 +1783,18 @@ ${R.desktop} {
   }
 `;const N_=N.ul`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
   padding: 0.5rem 0;
   margin: 1rem auto;
   justify-content: center;
   align-items: center;
   max-width: 700px;
-  
   ${R.mobile} {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
     gap: 0.2rem;
-    justify-items: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
   }
 `,P_=N.li`
@@ -1814,8 +1812,8 @@ ${R.desktop} {
   ${R.mobile} {
     width: 100%;
     margin: 0.18rem 0;
-    text-align: left;
-    justify-self: start;
+    text-align: center;
+    justify-self: center;
     white-space: normal;
   }
 `,F_=N.span`
@@ -1872,7 +1870,7 @@ ${R.desktop} {
   ${R.mobile} {
     width: 100%;
     margin: 0.18rem 0;
-    text-align: left;
+    text-align: center;
     justify-self: start;
   }
 `,R_=N.ul`
